@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="task-manager">
+      <header class="task-manager__header">
+        <div class="task-manager__info">
+          <h1 class="task-manager__title">Task Manager</h1>
+          <p class="task-manager__date">Tuần này • 12 - 18 tháng 5</p>
+        </div>
+
+        <button class="task-manager__add-button" id="addTaskBtn">+ Thêm task</button>
+      </header>
+
+      <div class="task-manager__progress">
+        <div class="task-manager__progress-header">
+          <span class="task-manager__progress-label">Tiến độ tuần</span>
+          <span class="task-manager__progress-count">3 / 6 hoàn thành</span>
+        </div>
+
+        <div class="task-manager__progress-track">
+          <div class="task-manager__progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="task-manager__toolbar">
+        <span class="task-manager__toolbar-label">⚙ FILTER + SORT</span>
+
+        <div class="task-manager__filters">
+          <button class="task-manager__filter task-manager__filter--active">Tất cả</button>
+          <button class="task-manager__filter task-manager__filter--high">Cao</button>
+          <button class="task-manager__filter task-manager__filter--medium">Trung bình</button>
+          <button class="task-manager__filter task-manager__filter--low">Thấp</button>
+          <button class="task-manager__filter task-manager__filter--deadline">↕ Deadline</button>
+        </div>
+      </div>
+
+      <div class="task-manager__list" id="taskList">
+
+      </div>
+
+      <footer class="task-manager__footer">
+        <p class="task-manager__summary">3 task chưa xong · 1 quá hạn</p>
+
+        <div class="task-manager__actions">
+          <button class="task-manager__action task-manager__action--export">↓ Export</button>
+          <button class="task-manager__action task-manager__action--delete">Xóa xong</button>
+        </div>
+      </footer>
+    </section>
+
+    <div class="modal" id="addTaskModal">
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <h2 class="modal__title">Thêm task mới</h2>
+
+        <form class="modal__form" id="taskForm">
+          <div class="modal__group">
+            <label class="modal__label" for="task-name">Tên task</label>
+            <input
+              class="modal__input"
+              id="task-name"
+              type="text"
+              placeholder="Nhập tên công việc..."
+            />
+          </div>
+
+          <div class="modal__row">
+            <div class="modal__group">
+              <label class="modal__label" for="priority">Mức độ ưu tiên</label>
+              <select class="modal__select" id="priority">
+                <option>• Cao</option>
+                <option>• Trung bình</option>
+                <option>• Thấp</option>
+              </select>
+            </div>
+
+            <div class="modal__group">
+              <label class="modal__label" for="deadline">Deadline</label>
+              <input
+                class="modal__input"
+                id="deadline"
+                type="text"
+                placeholder="DD/MM/YYYY"
+              />
+            </div>
+          </div>
+
+          <div class="modal__group">
+            <label class="modal__label">Nhãn</label>
+
+            <div class="modal__tags">
+              <button class="modal__tag modal__tag--active" type="button">Học tập</button>
+              <button class="modal__tag" type="button">Công việc</button>
+              <button class="modal__tag" type="button">Cá nhân</button>
+            </div>
+          </div>
+
+          <div class="modal__actions">
+            <button class="modal__button modal__button--cancel" type="button" id="cancelBtn">
+              Huỷ
+            </button>
+            <button class="modal__button modal__button--save" type="submit">
+              Lưu task
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <div class="modal__edit">
+    
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
