@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Task Manager</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
   <main class="page">
     <section class="task-manager">
@@ -33,11 +35,13 @@
         <span class="task-manager__toolbar-label">⚙ FILTER + SORT</span>
 
         <div class="task-manager__filters">
-          <button class="task-manager__filter task-manager__filter--active">Tất cả</button>
-          <button class="task-manager__filter task-manager__filter--high">Cao</button>
-          <button class="task-manager__filter task-manager__filter--medium">Trung bình</button>
-          <button class="task-manager__filter task-manager__filter--low">Thấp</button>
-          <button class="task-manager__filter task-manager__filter--deadline">↕ Deadline</button>
+          <button class="task-manager__filter task-manager__filter--active" id="filterActive">Tất cả</button>
+          <button class="task-manager__filter task-manager__filter--high" id="filterHigh">Cao</button>
+          <button class="task-manager__filter task-manager__filter--medium" id="filterMedium">Trung bình</button>
+          <button class="task-manager__filter task-manager__filter--low" id="filterLow">Thấp</button>
+          <button class="task-manager__filter task-manager__filter--deadline" id="filterDeadline">↕ Deadline</button>
+          <button class="task-manager__filter task-manager__filter--toggle-completed" id="toggleCompleted">👁 Ẩn
+            xong</button>
         </div>
       </div>
 
@@ -63,12 +67,7 @@
         <form class="modal__form" id="taskForm">
           <div class="modal__group">
             <label class="modal__label" for="task-name">Tên task</label>
-            <input
-              class="modal__input"
-              id="task-name"
-              type="text"
-              placeholder="Nhập tên công việc..."
-            />
+            <input class="modal__input" id="task-name" type="text" placeholder="Nhập tên công việc..." />
           </div>
 
           <div class="modal__row">
@@ -83,12 +82,7 @@
 
             <div class="modal__group">
               <label class="modal__label" for="deadline">Deadline</label>
-              <input
-                class="modal__input"
-                id="deadline"
-                type="text"
-                placeholder="DD/MM/YYYY"
-              />
+              <input class="modal__input" id="deadline" type="text" placeholder="DD/MM/YYYY" />
             </div>
           </div>
 
@@ -115,8 +109,11 @@
     </div>
   </main>
   <div class="modal__edit">
-    
+
   </div>
-  <script src="./main.js"></script>
+
+  <!-- Scripts loaded in order -->
+  <script src="/main.js"></script>
 </body>
+
 </html>

@@ -149,6 +149,11 @@ body {
     background-color: transparent;
 }
 
+.task-manager__filter--toggle-completed {
+    border          : 1px solid #444;
+    background-color: transparent;
+}
+
 .task-manager__list {
     background-color: #191b19;
 }
@@ -233,20 +238,33 @@ body {
 }
 
 .task-card__checkbox {
-    margin-top: 2px;
-    cursor    : pointer;
+    margin-top     : 2px;
+    cursor         : pointer;
+    display        : inline-flex;
+    align-items    : center;
+    justify-content: center;
+    position       : relative;
+    width          : 18px;
+    height         : 18px;
+    flex-shrink    : 0;
 }
 
 .task-card__input {
-    display: none;
+    position: absolute;
+    inset   : 0;
+    margin  : 0;
+    opacity : 0;
+    cursor  : pointer;
+    z-index : 2;
 }
 
 .task-card__checkmark {
-    width        : 17px;
-    height       : 17px;
-    display      : inline-block;
-    border       : 1px solid #777;
-    border-radius: 5px;
+    width         : 18px;
+    height        : 18px;
+    display       : inline-block;
+    border        : 1px solid #777;
+    border-radius : 5px;
+    pointer-events: none;
 }
 
 .task-card__input:checked+.task-card__checkmark {
@@ -328,6 +346,11 @@ body {
     color           : #aaa;
 }
 
+.task-card__menu-wrap {
+    position   : relative;
+    margin-left: auto;
+}
+
 .task-card__menu {
     border          : none;
     padding         : 5px 8px;
@@ -335,6 +358,43 @@ body {
     background-color: #2c2e2c;
     color           : #aaa;
     cursor          : pointer;
+}
+
+.task-card__dropdown {
+    display         : none;
+    position        : absolute;
+    right           : 0;
+    top             : calc(100% + 6px);
+    min-width       : 108px;
+    padding         : 6px;
+    border          : 1px solid #333531;
+    border-radius   : 10px;
+    background-color: #222420;
+    box-shadow      : 0 10px 24px rgba(0, 0, 0, 0.35);
+    z-index         : 10;
+}
+
+.task-card__dropdown--open {
+    display: block;
+}
+
+.task-card__dropdown-item {
+    width           : 100%;
+    border          : none;
+    padding         : 8px 10px;
+    border-radius   : 8px;
+    background-color: transparent;
+    color           : #ddd;
+    text-align      : left;
+    cursor          : pointer;
+}
+
+.task-card__dropdown-item:hover {
+    background-color: #2d302d;
+}
+
+.task-card__dropdown-item--danger {
+    color: #ff8f8f;
 }
 
 /* TASK FORM */
